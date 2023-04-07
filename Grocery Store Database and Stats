@@ -1,0 +1,31 @@
+--Create a store database
+
+CREATE TABLE inventory (id INTEGER PRIMARY KEY, name TEXT, quantity INTEGER, price INTEGER);
+
+INSERT INTO inventory VALUES (1, "journals", 30, 5.00);
+INSERT INTO inventory VALUES (2, "pens", 100, 2.00);
+INSERT INTO inventory VALUES (3, "plants",15, 20.00);
+INSERT INTO inventory VALUES (4, "crystals", 40, 3.33);
+INSERT INTO inventory VALUES (5, "tarot cards", 11, 30.00);
+INSERT INTO inventory VALUES (6, "shirts", 15, 10.00);
+INSERT INTO inventory VALUES (7, "bracelets", 77, 7.00);
+INSERT INTO inventory VALUES (8, "necklaces", 88, 7.00);
+INSERT INTO inventory VALUES (9, "oracle decks", 11, 18.00);
+INSERT INTO inventory VALUES (10, "stickers", 500, 2.00);
+INSERT INTO inventory VALUES (11, "stationary", 100, 10.00);
+INSERT INTO inventory VALUES (12, "stamps", 1000, 1.25);
+INSERT INTO inventory VALUES (13, "masks", 100, 1.00); 
+INSERT INTO inventory VALUES (14, "bottled water", 50, 1.00);
+INSERT INTO inventory VALUES (15, "iced tea", 50, 2.00);
+
+--display inventory items that have a quantity less than 100
+SELECT * FROM inventory WHERE quantity < 100; 
+
+--show items in inventory from most expensive to least expensive
+SELECT * FROM inventory ORDER BY price desc;
+
+--display top 3 expensive items in inventory
+SELECT name, price, quantity 
+FROM inventory 
+ORDER BY price desc 
+limit 3;
